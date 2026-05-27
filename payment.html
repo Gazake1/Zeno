@@ -405,21 +405,16 @@
       <h1>Finalizar Compra</h1>
       <p class="subtitle">Complete o pagamento para receber o Zeno instantaneamente.</p>
 
-      <!-- PLACEHOLDER PARA KIWIFY -->
-      <div id="kiwify-checkout" class="kiwify-placeholder">
-        <h3>🔗 Integração Kiwify</h3>
-        <p>
-          Substitua este bloco pelo código de integração do Kiwify.<br/>
-          Você pode usar um link direto ou incorporar o checkout inline.
-        </p>
-        <code>&lt;!-- Cole aqui o código do produto Kiwify --&gt;
-&lt;!-- Exemplo de link direto: --&gt;
-&lt;a href="SEU_LINK_KIWIFY" class="btn-kiwify"&gt;
-  Pagar com Kiwify
-&lt;/a&gt;
-
-&lt;!-- Ou incorpore o checkout inline: --&gt;
-&lt;script src="https://...kiwify.js"&gt;&lt;/script&gt;</code>
+      <!-- KIWIFY CHECKOUT -->
+      <div id="kiwify-checkout" style="min-height: 400px;">
+        <iframe 
+          src="https://pay.kiwify.com/dd08q8P" 
+          width="100%" 
+          height="600" 
+          frameborder="0" 
+          scrolling="auto"
+          style="border-radius: 12px; background: rgba(30, 30, 30, 0.6);">
+        </iframe>
       </div>
 
       <!-- GUARANTEE -->
