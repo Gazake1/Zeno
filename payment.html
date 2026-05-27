@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comprar Zeno AutoClicker - $5 USD</title>
+  <meta name="description" content="Adquira o Zeno AutoClicker por apenas $5 USD. Acesso vitalício, atualizações gratuitas." />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="shortcut icon" href="logo.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0a0a0a;
+      --bg2:       #141414;
+      --bg3:       #1e1e1e;
+      --border:    rgba(139, 92, 246, 0.2);
+      --accent:    #8b5cf6;
+      --accent-dk: #6d28d9;
+      --accent-light: #a78bfa;
+      --accent-glow: rgba(139, 92, 246, 0.4);
+      --gold:      #fbbf24;
+      --gold-dark: #f59e0b;
+      --green:     #10b981;
+      --text:      #ffffff;
+      --text-light:#e5e5e5;
+      --text-dim:  #a3a3a3;
+      --text-muted:#525252;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-light);
+      font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── BACKGROUND ── */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: 
+        radial-gradient(circle at 50% 30%, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 40px;
+      height: 64px;
+      background: rgba(10, 10, 10, 0.9);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-brand { 
+      display: flex; align-items: center; gap: 12px; text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .nav-brand:hover { opacity: 0.8; }
+    .nav-logo  { 
+      width: 36px; height: 36px; border-radius: 8px; object-fit: cover;
+      box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+    }
+    .nav-name  { 
+      font-size: 20px; font-weight: 800; color: var(--text); 
+      letter-spacing: 0.5px; 
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .nav-back {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      transition: color .2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-back:hover { color: var(--text); }
+
+    /* ── MAIN ── */
+    main {
+      flex: 1;
+      padding: 60px 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .checkout-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    /* ── PRODUCT SUMMARY ── */
+    .product-summary {
+      background: rgba(20, 20, 20, 0.6);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+      position: sticky;
+      top: 100px;
+    }
+    
+    .product-logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 16px;
+      margin-bottom: 24px;
+      box-shadow: 0 0 40px var(--accent-glow);
+    }
+
+    .product-summary h2 {
+      font-size: 28px;
+      font-weight: 800;
+      font-family: 'Space Grotesk', sans-serif;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .product-summary .tagline {
+      font-size: 15px;
+      color: var(--text-dim);
+      margin-bottom: 32px;
+    }
+
+    .price-box {
+      background: rgba(139, 92, 246, 0.1);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 32px;
+    }
+
+    .price-label {
+      font-size: 13px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .price-value {
+      font-size: 48px;
+      font-weight: 800;
+      font-family: 'Space Grotesk', sans-serif;
+      color: var(--text);
+    }
+
+    .price-note {
+      font-size: 14px;
+      color: var(--text-dim);
+      margin-top: 8px;
+    }
+
+    .includes {
+      list-style: none;
+      padding: 0;
+    }
+
+    .includes-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .includes li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-size: 15px;
+      color: var(--text-light);
+    }
+
+    .includes li::before {
+      content: '✓';
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .trust-badges {
+      margin-top: 32px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+
+    /* ── CHECKOUT SECTION ── */
+    .checkout-section {
+      background: rgba(20, 20, 20, 0.6);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+    }
+
+    .checkout-section h1 {
+      font-size: 32px;
+      font-weight: 800;
+      font-family: 'Space Grotesk', sans-serif;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .checkout-section .subtitle {
+      font-size: 16px;
+      color: var(--text-dim);
+      margin-bottom: 32px;
+    }
+
+    .kiwify-placeholder {
+      background: rgba(30, 30, 30, 0.6);
+      border: 2px dashed var(--border);
+      border-radius: 12px;
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    .kiwify-placeholder h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 12px;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .kiwify-placeholder p {
+      font-size: 15px;
+      color: var(--text-dim);
+      margin-bottom: 24px;
+      line-height: 1.8;
+    }
+
+    .kiwify-placeholder code {
+      display: block;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      font-family: 'Consolas', monospace;
+      font-size: 13px;
+      color: var(--accent-light);
+      text-align: left;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+
+    .guarantee {
+      margin-top: 32px;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .guarantee-icon {
+      font-size: 32px;
+      flex-shrink: 0;
+    }
+
+    .guarantee-text h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 4px;
+    }
+
+    .guarantee-text p {
+      font-size: 14px;
+      color: var(--text-dim);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      color: var(--text-muted);
+      font-size: 13px;
+      border-top: 1px solid var(--border);
+      position: relative;
+      z-index: 1;
+    }
+
+    footer a { 
+      color: var(--text-dim); 
+      text-decoration: none; 
+      transition: color .2s; 
+    }
+    footer a:hover { color: var(--text); }
+
+    .footer-paw {
+      font-size: 20px;
+      opacity: 0.5;
+      margin-bottom: 8px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .checkout-container {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .product-summary {
+        position: static;
+      }
+
+      nav {
+        padding: 0 20px;
+      }
+
+      .checkout-section,
+      .product-summary {
+        padding: 28px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a class="nav-brand" href="index.html">
+    <img class="nav-logo" src="logo.png" alt="Zeno" onerror="this.style.display='none'" />
+    <span class="nav-name">Zeno</span>
+  </a>
+  <a class="nav-back" href="index.html">
+    ← Voltar
+  </a>
+</nav>
+
+<!-- ── MAIN ── -->
+<main>
+  <div class="checkout-container">
+
+    <!-- PRODUCT SUMMARY -->
+    <div class="product-summary">
+      <img class="product-logo" src="logo.png" alt="Zeno" onerror="this.style.display='none'" />
+      <h2>Zeno AutoClicker</h2>
+      <p class="tagline">Premium auto-clicker para Minecraft</p>
+
+      <div class="price-box">
+        <div class="price-label">Preço Total</div>
+        <div class="price-value">$5<span style="font-size: 24px; color: var(--text-dim);">.00</span></div>
+        <div class="price-note">Pagamento único · Acesso vitalício</div>
+      </div>
+
+      <div class="includes-title">Incluído no pacote</div>
+      <ul class="includes">
+        <li>Jitter clicking até 20 CPS</li>
+        <li>Sons de mouses famosos</li>
+        <li>Binds personalizáveis</li>
+        <li>8 temas de cor premium</li>
+        <li>Minimize para bandeja</li>
+        <li>Configurações salvas</li>
+        <li>Atualizações gratuitas</li>
+        <li>Suporte técnico</li>
+      </ul>
+
+      <div class="trust-badges">
+        <div class="badge">🔒 Pagamento seguro</div>
+        <div class="badge">⚡ Acesso imediato</div>
+      </div>
+    </div>
+
+    <!-- CHECKOUT -->
+    <div class="checkout-section">
+      <h1>Finalizar Compra</h1>
+      <p class="subtitle">Complete o pagamento para receber o Zeno instantaneamente.</p>
+
+      <!-- PLACEHOLDER PARA KIWIFY -->
+      <div id="kiwify-checkout" class="kiwify-placeholder">
+        <h3>🔗 Integração Kiwify</h3>
+        <p>
+          Substitua este bloco pelo código de integração do Kiwify.<br/>
+          Você pode usar um link direto ou incorporar o checkout inline.
+        </p>
+        <code>&lt;!-- Cole aqui o código do produto Kiwify --&gt;
+&lt;!-- Exemplo de link direto: --&gt;
+&lt;a href="SEU_LINK_KIWIFY" class="btn-kiwify"&gt;
+  Pagar com Kiwify
+&lt;/a&gt;
+
+&lt;!-- Ou incorpore o checkout inline: --&gt;
+&lt;script src="https://...kiwify.js"&gt;&lt;/script&gt;</code>
+      </div>
+
+      <!-- GUARANTEE -->
+      <div class="guarantee">
+        <div class="guarantee-icon">✅</div>
+        <div class="guarantee-text">
+          <h4>Garantia de 7 dias</h4>
+          <p>Se não ficar satisfeito, devolvemos seu dinheiro sem perguntas.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-paw">🐾</div>
+  <p>© 2026 Zeno AutoClicker. Pagamento processado via Kiwify.</p>
+  <p style="margin-top:8px;font-size:12px;">
+    <a href="index.html">Home</a> · 
+    <a href="https://github.com/Gazake1/Zeno" target="_blank">GitHub</a>
+  </p>
+</footer>
+
+</body>
+</html>
