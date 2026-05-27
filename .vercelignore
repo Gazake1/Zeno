@@ -1,0 +1,9 @@
+.venv/
+build/
+__pycache__/
+*.spec
+autoclicker.py
+requirements.txt
+iniciar.bat
+instalar.bat
+settings.json
