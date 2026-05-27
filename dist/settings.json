@@ -1,0 +1,13 @@
+{
+  "lc_cps": 20.0,
+  "rc_cps": 20.0,
+  "jitter": 10.0,
+  "j_target": "Esquerdo",
+  "sound": "DeathAdder V3",
+  "accent": "#cc2222",
+  "accent_dim": "#aa1111",
+  "lc_bind": "mb:buttonx2",
+  "rc_bind": "mb:buttonx1",
+  "j_bind": "kb:'r'",
+  "snd_bind": "kb:'.'"
+}
