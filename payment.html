@@ -3,32 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Buy Zeno AutoClicker - $5 USD</title>
+  <title>Buy Zeno AutoClicker — $5 USD</title>
   <meta name="description" content="Get Zeno AutoClicker for only $5 USD. Lifetime access, free updates." />
   <link rel="icon" type="image/png" href="logo.png" />
   <link rel="shortcut icon" href="logo.ico" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:        #0a0a0a;
-      --bg2:       #141414;
-      --bg3:       #1e1e1e;
-      --border:    rgba(139, 92, 246, 0.2);
-      --accent:    #8b5cf6;
-      --accent-dk: #6d28d9;
+      --bg:           #0a0a0a;
+      --bg2:          #141414;
+      --bg3:          #1e1e1e;
+      --border:       rgba(139, 92, 246, 0.18);
+      --border-hover: rgba(139, 92, 246, 0.5);
+      --accent:       #8b5cf6;
+      --accent-dk:    #6d28d9;
       --accent-light: #a78bfa;
-      --accent-glow: rgba(139, 92, 246, 0.4);
-      --gold:      #fbbf24;
-      --gold-dark: #f59e0b;
-      --green:     #10b981;
-      --text:      #ffffff;
-      --text-light:#e5e5e5;
-      --text-dim:  #a3a3a3;
-      --text-muted:#525252;
+      --accent-glow:  rgba(139, 92, 246, 0.4);
+      --gold:         #fbbf24;
+      --gold-dark:    #f59e0b;
+      --green:        #10b981;
+      --text:         #ffffff;
+      --text-light:   #e5e5e5;
+      --text-dim:     #a3a3a3;
+      --text-muted:   #525252;
     }
 
     html { scroll-behavior: smooth; }
@@ -41,319 +42,329 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      overflow-x: hidden;
     }
 
-    /* ── BACKGROUND ── */
-    body::before {
-      content: '';
+    /* ── BG ── */
+    .bg-glow {
       position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: 
-        radial-gradient(circle at 50% 30%, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
+      inset: 0;
       pointer-events: none;
       z-index: 0;
+      background:
+        radial-gradient(ellipse at 50% 30%, rgba(139, 92, 246, 0.07) 0%, transparent 50%),
+        radial-gradient(ellipse at 20% 80%, rgba(109, 40, 217, 0.04) 0%, transparent 45%);
     }
 
     /* ── NAV ── */
     nav {
       position: sticky; top: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 0 40px;
-      height: 64px;
-      background: rgba(10, 10, 10, 0.9);
-      backdrop-filter: blur(20px);
+      padding: 0 52px;
+      height: 68px;
+      background: rgba(10, 10, 10, 0.88);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
       border-bottom: 1px solid var(--border);
     }
-    .nav-brand { 
-      display: flex; align-items: center; gap: 12px; text-decoration: none;
+
+    .nav-brand {
+      display: flex; align-items: center; gap: 12px;
+      text-decoration: none;
       transition: opacity 0.2s;
     }
-    .nav-brand:hover { opacity: 0.8; }
-    .nav-logo  { 
-      width: 36px; height: 36px; border-radius: 8px; object-fit: cover;
-      box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+    .nav-brand:hover { opacity: 0.75; }
+
+    .nav-logo {
+      width: 38px; height: 38px;
+      border-radius: 10px; object-fit: cover;
+      box-shadow: 0 0 22px var(--accent-glow);
     }
-    .nav-name  { 
-      font-size: 20px; font-weight: 800; color: var(--text); 
-      letter-spacing: 0.5px; 
+
+    .nav-name {
+      font-size: 21px; font-weight: 800;
+      color: var(--text);
+      letter-spacing: 0.2px;
       font-family: 'Space Grotesk', sans-serif;
     }
-    .nav-back {
+
+    .nav-breadcrumb {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 14px; color: var(--text-muted);
+    }
+
+    .nav-breadcrumb a {
       color: var(--text-dim);
       text-decoration: none;
-      font-size: 15px;
-      font-weight: 500;
-      transition: color .2s;
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      transition: color 0.2s;
     }
-    .nav-back:hover { color: var(--text); }
+    .nav-breadcrumb a:hover { color: var(--text); }
+
+    .nav-breadcrumb .sep { color: var(--text-muted); }
+
+    .nav-breadcrumb .current {
+      color: var(--accent-light);
+      font-weight: 600;
+    }
 
     /* ── MAIN ── */
     main {
       flex: 1;
-      padding: 60px 24px;
+      padding: 64px 52px;
       position: relative;
       z-index: 1;
     }
 
-    .checkout-container {
-      max-width: 1000px;
+    .checkout-wrap {
+      max-width: 980px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1.05fr;
       gap: 40px;
       align-items: start;
     }
 
-    /* ── PRODUCT SUMMARY ── */
-    .product-summary {
-      background: rgba(20, 20, 20, 0.6);
+    /* ── PRODUCT CARD ── */
+    .product-card {
+      background: rgba(20, 20, 20, 0.7);
       backdrop-filter: blur(20px);
       border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 40px;
+      border-radius: 22px;
+      padding: 40px 36px;
       position: sticky;
-      top: 100px;
-    }
-    
-    .product-logo {
-      width: 80px;
-      height: 80px;
-      border-radius: 16px;
-      margin-bottom: 24px;
-      box-shadow: 0 0 40px var(--accent-glow);
+      top: 92px;
     }
 
-    .product-summary h2 {
-      font-size: 28px;
-      font-weight: 800;
+    .product-logo {
+      width: 72px; height: 72px;
+      border-radius: 16px;
+      margin-bottom: 22px;
+      box-shadow: 0 0 36px var(--accent-glow);
+      object-fit: cover;
+    }
+
+    .product-name {
+      font-size: 26px; font-weight: 800;
       font-family: 'Space Grotesk', sans-serif;
       color: var(--text);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
-    .product-summary .tagline {
-      font-size: 15px;
-      color: var(--text-dim);
-      margin-bottom: 32px;
+    .product-tagline {
+      font-size: 14px; color: var(--text-dim);
+      margin-bottom: 30px;
     }
 
     .price-box {
-      background: rgba(139, 92, 246, 0.1);
+      background: rgba(139, 92, 246, 0.09);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px;
-      margin-bottom: 32px;
+      border-radius: 14px;
+      padding: 22px 24px;
+      margin-bottom: 28px;
     }
 
-    .price-label {
-      font-size: 13px;
-      color: var(--text-dim);
-      text-transform: uppercase;
-      letter-spacing: 1px;
+    .price-box-label {
+      font-size: 11px; color: var(--text-dim);
+      text-transform: uppercase; letter-spacing: 2px;
       margin-bottom: 8px;
     }
 
-    .price-value {
-      font-size: 48px;
-      font-weight: 800;
+    .price-box-value {
+      font-size: 52px; font-weight: 800;
       font-family: 'Space Grotesk', sans-serif;
       color: var(--text);
+      line-height: 1;
     }
 
-    .price-note {
-      font-size: 14px;
-      color: var(--text-dim);
+    .price-box-note {
+      font-size: 13px; color: var(--text-dim);
       margin-top: 8px;
+    }
+
+    .includes-title {
+      font-size: 11px; font-weight: 700;
+      color: var(--text-dim);
+      text-transform: uppercase; letter-spacing: 2px;
+      margin-bottom: 14px;
     }
 
     .includes {
       list-style: none;
       padding: 0;
-    }
-
-    .includes-title {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text-dim);
-      margin-bottom: 16px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      margin-bottom: 28px;
     }
 
     .includes li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      margin-bottom: 12px;
-      font-size: 15px;
-      color: var(--text-light);
+      display: flex; align-items: flex-start; gap: 11px;
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      font-size: 14.5px; color: var(--text-light);
     }
-
+    .includes li:last-child { border-bottom: none; }
     .includes li::before {
       content: '✓';
       color: var(--accent);
-      font-weight: 700;
-      font-size: 18px;
-      flex-shrink: 0;
+      font-weight: 800; font-size: 15px;
+      flex-shrink: 0; margin-top: 1px;
     }
 
-    .trust-badges {
-      margin-top: 32px;
-      padding-top: 32px;
+    .trust-row {
+      padding-top: 22px;
       border-top: 1px solid var(--border);
-      display: flex;
-      gap: 16px;
+      display: flex; gap: 14px; flex-wrap: wrap;
       justify-content: center;
-      flex-wrap: wrap;
     }
 
-    .badge {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13px;
-      color: var(--text-dim);
+    .trust-item {
+      display: flex; align-items: center; gap: 7px;
+      font-size: 12.5px; color: var(--text-dim);
     }
 
-    /* ── CHECKOUT SECTION ── */
-    .checkout-section {
-      background: rgba(20, 20, 20, 0.6);
+    /* ── CHECKOUT CARD ── */
+    .checkout-card {
+      background: rgba(20, 20, 20, 0.7);
       backdrop-filter: blur(20px);
       border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 40px;
+      border-radius: 22px;
+      padding: 40px 36px;
     }
 
-    .checkout-section h1 {
-      font-size: 32px;
-      font-weight: 800;
+    .checkout-title {
+      font-size: 30px; font-weight: 800;
       font-family: 'Space Grotesk', sans-serif;
       color: var(--text);
       margin-bottom: 8px;
     }
 
-    .checkout-section .subtitle {
-      font-size: 16px;
-      color: var(--text-dim);
-      margin-bottom: 32px;
+    .checkout-subtitle {
+      font-size: 15px; color: var(--text-dim);
+      margin-bottom: 36px;
     }
 
-    .kiwify-placeholder {
-      background: rgba(30, 30, 30, 0.6);
-      border: 2px dashed var(--border);
-      border-radius: 12px;
-      padding: 60px 40px;
+    .redirect-box {
       text-align: center;
+      padding: 48px 32px;
+      background: rgba(139, 92, 246, 0.06);
+      border: 1px dashed rgba(139, 92, 246, 0.25);
+      border-radius: 16px;
+      margin-bottom: 28px;
     }
 
-    .kiwify-placeholder h3 {
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 12px;
+    .redirect-icon {
+      font-size: 48px;
+      margin-bottom: 18px;
+    }
+
+    .redirect-box h3 {
+      font-size: 22px; font-weight: 800;
       font-family: 'Space Grotesk', sans-serif;
+      color: var(--text);
+      margin-bottom: 10px;
     }
 
-    .kiwify-placeholder p {
-      font-size: 15px;
-      color: var(--text-dim);
-      margin-bottom: 24px;
-      line-height: 1.8;
+    .redirect-box p {
+      font-size: 15px; color: var(--text-dim);
+      margin-bottom: 28px;
+      line-height: 1.7;
     }
 
-    .kiwify-placeholder code {
-      display: block;
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 16px;
-      font-family: 'Consolas', monospace;
-      font-size: 13px;
-      color: var(--accent-light);
-      text-align: left;
-      overflow-x: auto;
-      white-space: pre-wrap;
-      word-break: break-all;
+    .redirect-note {
+      font-size: 12px; color: var(--text-muted);
+      margin-top: 18px;
     }
 
-    .guarantee {
-      margin-top: 32px;
-      background: rgba(16, 185, 129, 0.1);
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dk) 100%);
+      color: #fff; border: none; border-radius: 12px;
+      padding: 17px 38px; font-size: 17px; font-weight: 700;
+      cursor: pointer; text-decoration: none;
+      box-shadow: 0 0 30px var(--accent-glow);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      font-family: 'Space Grotesk', sans-serif;
+      position: relative; overflow: hidden;
+      white-space: nowrap;
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.04);
+      box-shadow: 0 0 52px rgba(139, 92, 246, 0.72);
+    }
+
+    .guarantee-box {
+      display: flex; align-items: flex-start; gap: 16px;
+      background: rgba(16, 185, 129, 0.08);
       border: 1px solid rgba(16, 185, 129, 0.2);
-      border-radius: 12px;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
+      border-radius: 14px;
+      padding: 20px 22px;
     }
 
-    .guarantee-icon {
-      font-size: 32px;
-      flex-shrink: 0;
-    }
+    .guarantee-icon { font-size: 30px; flex-shrink: 0; }
 
-    .guarantee-text h4 {
-      font-size: 16px;
-      font-weight: 700;
+    .guarantee-title {
+      font-size: 15px; font-weight: 700;
       color: var(--green);
-      margin-bottom: 4px;
+      margin-bottom: 5px;
     }
 
-    .guarantee-text p {
-      font-size: 14px;
-      color: var(--text-dim);
+    .guarantee-desc {
+      font-size: 13.5px; color: var(--text-dim);
+      line-height: 1.6;
+    }
+
+    /* Countdown */
+    .countdown-bar {
+      height: 3px;
+      background: rgba(139, 92, 246, 0.15);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 28px;
+    }
+    .countdown-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent-dk), var(--accent));
+      border-radius: 999px;
+      animation: countdown 3s linear forwards;
+    }
+    @keyframes countdown {
+      from { width: 100%; }
+      to   { width: 0%; }
+    }
+
+    .countdown-text {
+      font-size: 13px; color: var(--text-dim);
+      margin-bottom: 20px;
+      text-align: center;
     }
 
     /* ── FOOTER ── */
     footer {
       text-align: center;
-      padding: 32px 24px;
+      padding: 36px 24px;
       color: var(--text-muted);
       font-size: 13px;
       border-top: 1px solid var(--border);
-      position: relative;
-      z-index: 1;
+      position: relative; z-index: 1;
     }
 
-    footer a { 
-      color: var(--text-dim); 
-      text-decoration: none; 
-      transition: color .2s; 
-    }
+    footer a { color: var(--text-dim); text-decoration: none; transition: color 0.2s; }
     footer a:hover { color: var(--text); }
 
-    .footer-paw {
-      font-size: 20px;
-      opacity: 0.5;
-      margin-bottom: 8px;
-    }
+    .footer-paw { font-size: 18px; opacity: 0.18; margin-bottom: 10px; }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
-      .checkout-container {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-
-      .product-summary {
-        position: static;
-      }
-
-      nav {
-        padding: 0 20px;
-      }
-
-      .checkout-section,
-      .product-summary {
-        padding: 28px 24px;
-      }
+      nav { padding: 0 20px; }
+      main { padding: 40px 20px; }
+      .checkout-wrap { grid-template-columns: 1fr; gap: 28px; }
+      .product-card { position: static; }
+      .product-card,
+      .checkout-card { padding: 28px 22px; }
     }
   </style>
 </head>
 <body>
+
+<div class="bg-glow"></div>
 
 <!-- ── NAV ── -->
 <nav>
@@ -361,86 +372,73 @@
     <img class="nav-logo" src="logo.png" alt="Zeno" onerror="this.style.display='none'" />
     <span class="nav-name">Zeno</span>
   </a>
-  <a class="nav-back" href="index.html">
-    ← Voltar
-  </a>
+  <div class="nav-breadcrumb">
+    <a href="index.html">Home</a>
+    <span class="sep">›</span>
+    <span class="current">Checkout</span>
+  </div>
 </nav>
 
 <!-- ── MAIN ── -->
 <main>
-  <div class="checkout-container">
+  <div class="checkout-wrap">
 
     <!-- PRODUCT SUMMARY -->
-    <div class="product-summary">
+    <div class="product-card">
       <img class="product-logo" src="logo.png" alt="Zeno" onerror="this.style.display='none'" />
-      <h2>Zeno AutoClicker</h2>
-      <p class="tagline">Premium auto-clicker for Minecraft</p>
+      <div class="product-name">Zeno AutoClicker</div>
+      <div class="product-tagline">Premium auto-clicker for Minecraft</div>
 
       <div class="price-box">
-        <div class="price-label">Total Price</div>
-        <div class="price-value">$5<span style="font-size: 24px; color: var(--text-dim);">.00</span></div>
-        <div class="price-note">One-time payment · Lifetime access</div>
+        <div class="price-box-label">Total</div>
+        <div class="price-box-value">$5<span style="font-size:26px;color:var(--text-dim)">.00</span></div>
+        <div class="price-box-note">One-time payment · Lifetime access</div>
       </div>
 
-      <div class="includes-title">Included in package</div>
+      <div class="includes-title">What's included</div>
       <ul class="includes">
         <li>Jitter clicking up to 20 CPS</li>
-        <li>Famous mouse sounds</li>
-        <li>Customizable binds</li>
+        <li>3 iconic mouse sounds</li>
+        <li>Customizable hotkey binds</li>
         <li>8 premium color themes</li>
-        <li>Minimize to tray</li>
-        <li>Saved settings</li>
-        <li>Free updates</li>
+        <li>System tray minimize</li>
+        <li>Persistent settings</li>
+        <li>Free updates forever</li>
         <li>Technical support</li>
       </ul>
 
-      <div class="trust-badges">
-        <div class="badge">🔒 Secure payment</div>
-        <div class="badge">⚡ Instant access</div>
+      <div class="trust-row">
+        <div class="trust-item">🔒 Secure payment</div>
+        <div class="trust-item">⚡ Instant access</div>
+        <div class="trust-item">✅ 7-day guarantee</div>
       </div>
     </div>
 
     <!-- CHECKOUT -->
-    <div class="checkout-section">
-      <h1>Complete Purchase</h1>
-      <p class="subtitle">Complete payment to receive Zeno instantly.</p>
+    <div class="checkout-card">
+      <div class="checkout-title">Complete Purchase</div>
+      <p class="checkout-subtitle">You'll be redirected to Kiwify's secure checkout.</p>
 
-      <!-- KIWIFY REDIRECT -->
-      <div id="kiwify-checkout" style="text-align: center; padding: 60px 40px;">
-        <div style="margin-bottom: 32px;">
-          <div style="font-size: 48px; margin-bottom: 16px;">🔒</div>
-          <h3 style="font-size: 24px; font-weight: 700; color: var(--text); margin-bottom: 12px; font-family: 'Space Grotesk', sans-serif;">
-            Secure Checkout
-          </h3>
-          <p style="font-size: 16px; color: var(--text-dim); margin-bottom: 32px;">
-            You will be redirected to Kiwify's secure checkout.
-          </p>
-        </div>
-        
-        <a href="https://pay.kiwify.com/dd08q8P" 
-           class="btn-primary" 
-           style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dk) 100%); color: #fff; border: none; border-radius: 12px; padding: 18px 40px; font-size: 18px; font-weight: 700; cursor: pointer; text-decoration: none; box-shadow: 0 0 30px rgba(139, 92, 246, 0.4); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); font-family: 'Space Grotesk', sans-serif;">
-          <span>🛒 Go to Payment</span>
-        </a>
-        
-        <p style="font-size: 13px; color: var(--text-muted); margin-top: 24px;">
-          Secure processing via Kiwify • SSL Encrypted
-        </p>
+      <div class="countdown-bar">
+        <div class="countdown-fill"></div>
       </div>
-      
-      <script>
-        // Auto-redirect após 2 segundos
-        setTimeout(function() {
-          window.location.href = 'https://pay.kiwify.com/dd08q8P';
-        }, 2000);
-      </script>
+      <p class="countdown-text" id="countdownText">Redirecting in 3 seconds…</p>
 
-      <!-- GUARANTEE -->
-      <div class="guarantee">
+      <div class="redirect-box">
+        <div class="redirect-icon">🔒</div>
+        <h3>Secure Checkout</h3>
+        <p>Your payment is processed by Kiwify — a trusted platform with SSL encryption and buyer protection.</p>
+        <a class="btn-primary" href="https://pay.kiwify.com/dd08q8P" style="width:100%;justify-content:center;">
+          🛒 Go to Payment
+        </a>
+        <p class="redirect-note">Secure processing via Kiwify &nbsp;·&nbsp; SSL Encrypted</p>
+      </div>
+
+      <div class="guarantee-box">
         <div class="guarantee-icon">✅</div>
-        <div class="guarantee-text">
-          <h4>7-day guarantee</h4>
-          <p>If you're not satisfied, we'll refund your money no questions asked.</p>
+        <div>
+          <div class="guarantee-title">7-day money-back guarantee</div>
+          <div class="guarantee-desc">Not satisfied? We'll refund your money, no questions asked.</div>
         </div>
       </div>
     </div>
@@ -452,11 +450,26 @@
 <footer>
   <div class="footer-paw">🐾</div>
   <p>© 2026 Zeno AutoClicker. Payment processed via Kiwify.</p>
-  <p style="margin-top:8px;font-size:12px;">
-    <a href="index.html">Home</a> · 
+  <p style="margin-top:6px;font-size:12px;">
+    <a href="index.html">Home</a> &nbsp;·&nbsp;
     <a href="https://github.com/Gazake1/Zeno" target="_blank">GitHub</a>
   </p>
 </footer>
+
+<script>
+var secs = 3;
+var el = document.getElementById('countdownText');
+var interval = setInterval(function () {
+  secs--;
+  if (secs > 0) {
+    el.textContent = 'Redirecting in ' + secs + ' second' + (secs === 1 ? '' : 's') + '…';
+  } else {
+    clearInterval(interval);
+    el.textContent = 'Redirecting…';
+    window.location.href = 'https://pay.kiwify.com/dd08q8P';
+  }
+}, 1000);
+</script>
 
 </body>
 </html>
